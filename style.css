@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #eaf8f0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 700px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#playerInputs input, #playerInputs select {
+  margin: 5px;
+  padding: 8px;
+}
+
+button {
+  padding: 8px 15px;
+  margin: 10px 5px;
+  border: none;
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #218838;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f8f9fa;
+}

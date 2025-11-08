@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ludo Loss Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Ludo Loss Tracker 🎲</h1>
+
+    <!-- Setup Section -->
+    <div id="setupSection">
+      <h2>Monthly Setup</h2>
+      <div id="playerInputs"></div>
+      <button id="savePlayers">Save Players</button>
+    </div>
+
+    <!-- Game Section -->
+    <div id="gameSection" class="hidden">
+      <h2>Log a Game</h2>
+      <label for="loserColor">Select Losing Color:</label>
+      <select id="loserColor"></select>
+      <button id="addLoss">Add Loss</button>
+
+      <h2>Scoreboard</h2>
+      <table id="scoreboard">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Color</th>
+            <th>Total Losses</th>
+            <th>Loss Dates</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Important: mark script as module -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
