@@ -114,7 +114,7 @@ function renderTable() {
       <td>${p.name}${p.team ? `<br><small>(${p.team})</small>` : ''}</td>
       <td style="color:${p.color}">${p.color}</td>
       <td>${p.losses}</td>
-      <td>${p.dates.join(', ') || '-'}</td>
+      <td>${p.dates.length ? p.dates[p.dates.length - 1] : '-'}</td>
     </tr>`).join('');
 }
 
