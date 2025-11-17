@@ -20,9 +20,7 @@ h1, h2 {
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 #playerInputs input, #playerInputs select {
   margin: 5px;
@@ -38,9 +36,13 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+button:hover { background: #218838; }
 
-button:hover {
-  background: #218838;
+button.danger {
+  background: #e55353;
+}
+button.danger:hover {
+  background: #cc4949;
 }
 
 table {
@@ -48,13 +50,71 @@ table {
   border-collapse: collapse;
   margin-top: 15px;
 }
-
 th, td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
 }
+th { background-color: #f8f9fa; }
 
-th {
-  background-color: #f8f9fa;
+button#openReset {
+  background: #6c63ff;
 }
+button#openReset:hover {
+  background: #5a52e6;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal.hidden { display: none; }
+
+.modal-content {
+  background: #fff;
+  width: 95%;
+  max-width: 420px;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.modal-content h3 {
+  margin-top: 0;
+  text-align: center;
+}
+.modal-content input, .modal-content select {
+  width: 90%;
+  margin: 6px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.notice {
+  background: #fff8e6;
+  border: 1px solid #ffe2a8;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0 16px;
+}
+.notice strong { display:block; margin-bottom:6px; }

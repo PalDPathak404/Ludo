@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ludo Loss Tracker</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="https://img.freepik.com/premium-psd/ludo-icon-3d-render_360064-764.jpg" type="image/x-icon">
 </head>
 <body>
   <div class="container">
@@ -13,6 +14,18 @@
     <!-- Setup Section -->
     <div id="setupSection">
       <h2>Monthly Setup</h2>
+      <p style="text-align:center;margin-top:-8px">
+        First time only: set a password for each player. Later, leave password blank to keep the old one.
+      </p>
+
+      <!-- Admin password notice (first time only) -->
+      <div id="adminSetupNote" class="notice hidden">
+        <strong>Set Admin Password (first time only)</strong>
+        <p>This password controls player password resets and the Reset Score action.</p>
+        <input type="password" id="adminPw1" placeholder="Admin password (first time only)" autocomplete="new-password" />
+        <input type="password" id="adminPw2" placeholder="Confirm admin password" autocomplete="new-password" />
+      </div>
+
       <div id="playerInputs"></div>
       <button id="savePlayers">Save Players</button>
     </div>
@@ -23,6 +36,12 @@
       <label for="loserColor">Select Losing Color:</label>
       <select id="loserColor"></select>
       <button id="addLoss">Add Loss</button>
+
+      <!-- Admin actions -->
+      <div class="admin-actions">
+        <button id="openReset">Reset Player Password</button>
+        <button id="resetScores" class="danger">Reset Score (Admin)</button>
+      </div>
 
       <h2>Scoreboard</h2>
       <table id="scoreboard">
@@ -39,7 +58,51 @@
     </div>
   </div>
 
-  <!-- Important: mark script as module -->
+  <!-- Password Modal (for Add Loss) -->
+  <div id="pwModal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="pwModalTitle">Enter Password</h3>
+      <p id="pwModalDesc"></p>
+      <input type="password" id="pwInput" placeholder="Password" autocomplete="current-password" />
+      <div class="modal-actions">
+        <button id="pwCancel">Cancel</button>
+        <button id="pwSubmit">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Auth Modal (generic: verify admin password) -->
+  <div id="adminAuthModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Admin Authentication</h3>
+      <p id="adminAuthDesc">Enter admin password to continue.</p>
+      <input type="password" id="adminAuthPw" placeholder="Admin password" autocomplete="current-password" />
+      <div class="modal-actions">
+        <button id="adminAuthCancel">Cancel</button>
+        <button id="adminAuthSubmit">Verify</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reset Password Modal (Admin-protected) -->
+  <div id="resetModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Reset Player Password</h3>
+
+      <label for="resetPlayer">Choose Player</label>
+      <select id="resetPlayer"></select>
+
+      <input type="password" id="adminPwForReset" placeholder="Admin password" autocomplete="current-password" />
+      <input type="password" id="newPw1" placeholder="New password" autocomplete="new-password" />
+      <input type="password" id="newPw2" placeholder="Confirm new password" autocomplete="new-password" />
+
+      <div class="modal-actions">
+        <button id="resetCancel">Close</button>
+        <button id="resetSubmitAdmin">Reset</button>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="script.js"></script>
 </body>
 </html>
